@@ -1,0 +1,47 @@
+/*
+
+At this checkpoint, you are asked to write an algorithm that read a sentence, 
+which ends with a point, character by character and to determine:
+
+The length of the sentence (the number of characters).
+The number of words in the sentence (assuming that the words are separated by a single space).
+The number of vowels in the sentence.
+
+You have to keep in mind that: 
+
+Each character will be treated separately.
+The last character is the point.
+Use three variables as counters.
+
+ */ 
+
+
+const sentence = 'Micheal passion for programming would make him complete GOMYCODE learning platform'
+
+ALGORITHM algorithmCheckpoint
+VAR
+    sentence: ARRAY_OF STRING;
+    numberofChar: INTEGER: = 0;
+    numberofWordsCount: INTEGER: = 0;
+    vowelsCount: INTEGER: = 0;
+    vowels: ARRAY_OF: CHAR: = ['a', 'e', 'i', 'o', 'u'];
+BEGIN
+
+    sentenceLength := sentence.length;
+
+    FOR i FROM 0 TO sentenceLength-1 STEP 1 DO
+        IF sentence[i] = ' ' THEN
+            numberofWordsCount := numberofWordsCount + 1;
+        END_IF;
+    END_FOR;
+
+
+    FOR i FROM 0 TO sentenceLength-1 STEP 1 DO
+        FOR j FROM 0 TO vowels.length-1 STEP 1 DO
+            IF sentence[i] = vowels[j] THEN
+                vowelCount := vowelCount + 1;
+            END_IF;
+        END_FOR;
+    END_FOR;
+END
+
